@@ -1,17 +1,21 @@
-import Header from "./Header";
-import Conteudo from "./Conteudo";
+import Header from "./componentes/Header/Header";
+import Conteudo from "./componentes/Conteudo/Conteudo";
+import Projetos from "./componentes/Projetos/Projetos";
+import Botao from "./componentes/Botao/Botao";
 import "./App.css";
 
 function App() {
-  return (
-    <div className="conteudo-principal">
-      <Header />
-      <Conteudo />
-      <footer className="footer">
-        <p>Feito por @dev-julyellens</p>
-      </footer>
-    </div>
-  );
+    return (
+        <div className="conteudo-principal">
+            <Header />
+            <Conteudo />
+            <Botao />
+            <Projetos />
+            <footer className="footer">
+                <p>Feito por @dev-julyellens</p>
+            </footer>
+        </div>
+    );
 }
 
 export default App;
