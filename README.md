@@ -1,75 +1,115 @@
-# React + TypeScript + Vite
+# Portfólio — @dev-julyellens
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site de portfólio pessoal em desenvolvimento, construído com **React**, **TypeScript** e **Vite**. O projeto acompanha uma série de videoaulas no YouTube, aplicando conceitos de componentes, estado com hooks e estilização com CSS ao longo das aulas.
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este repositório reúne o progresso do portfólio da desenvolvedora **@dev-julyellens**. A página apresenta uma introdução profissional, navegação principal e uma seção de conteúdo interativa com botão "Saiba mais", que exibe informações adicionais ao clique.
 
-## React Compiler
+O objetivo é evoluir gradualmente o site até cobrir todas as seções planejadas no menu: Home, Sobre Mim, Projetos e Contato.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **Cabeçalho** com nome e links de navegação (Home, Sobre Mim, Projetos, Contato)
+- **Seção principal** com título, subtítulo e imagem de apresentação
+- **Botão interativo** "Saiba mais" que revela um texto sobre experiência e paixão por tecnologia (estado gerenciado com `useState`)
+- **Rodapé** com créditos de autoria
+- **Layout responsivo** com flexbox e paleta azul e branco
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Tecnologia   | Uso                          |
+| ------------ | ---------------------------- |
+| React 19     | Interface e componentes        |
+| TypeScript   | Tipagem estática               |
+| Vite 8       | Build tool e servidor de dev   |
+| CSS          | Estilização dos componentes    |
+| ESLint       | Qualidade e padronização de código |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Estrutura do projeto
 
 ```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+meu-projeto/
+├── public/              # Arquivos estáticos servidos na raiz
+├── src/
+│   ├── assets/          # Imagens e outros recursos
+│   ├── App.tsx          # Componente raiz da aplicação
+│   ├── App.css          # Estilos globais e do layout principal
+│   ├── Header.tsx       # Cabeçalho com navegação
+│   ├── Header.css       # Estilos do cabeçalho
+│   ├── Conteudo.tsx     # Seção principal com botão interativo
+│   ├── Conteudo.css     # Estilos da seção de conteúdo
+│   └── main.tsx         # Ponto de entrada da aplicação
+├── index.html           # HTML base
+├── package.json         # Dependências e scripts
+├── tsconfig.json        # Configuração do TypeScript
+└── vite.config.ts       # Configuração do Vite
 ```
+
+## Pré-requisitos
+
+- [Node.js](https://nodejs.org/) 18 ou superior
+- npm (incluído com o Node.js)
+
+## Como executar
+
+### 1. Clonar o repositório
+
+```bash
+git clone <url-do-repositorio>
+cd meu-projeto
+```
+
+### 2. Instalar dependências
+
+```bash
+npm install
+```
+
+### 3. Iniciar o servidor de desenvolvimento
+
+```bash
+npm run dev
+```
+
+O Vite exibirá no terminal o endereço local (geralmente `http://localhost:5173`). Abra esse link no navegador para ver o portfólio.
+
+## Scripts disponíveis
+
+| Comando           | Descrição                                      |
+| ----------------- | ---------------------------------------------- |
+| `npm run dev`     | Inicia o servidor de desenvolvimento com HMR   |
+| `npm run build`   | Gera a versão de produção na pasta `dist/`     |
+| `npm run preview` | Visualiza localmente o build de produção       |
+| `npm run lint`    | Executa o ESLint no código                     |
+
+## Build para produção
+
+```bash
+npm run build
+```
+
+Os arquivos otimizados serão gerados em `dist/`. Para testar o resultado antes do deploy:
+
+```bash
+npm run preview
+```
+
+## Contexto de aprendizado
+
+Este projeto é desenvolvido seguindo videoaulas no YouTube, com foco em:
+
+- Criação e composição de componentes React
+- Uso de hooks (`useState`) para interatividade
+- Organização de estilos por componente (CSS modules por arquivo)
+- Configuração e uso do Vite em projetos React + TypeScript
+
+Conforme as aulas avançam, novas seções e funcionalidades serão adicionadas ao portfólio.
+
+## Autora
+
+**@dev-julyellens** — Desenvolvedora de sistemas
+
+---
+
+Feito com React, TypeScript e Vite.
